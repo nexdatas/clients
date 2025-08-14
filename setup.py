@@ -20,7 +20,7 @@
 # GUI to create the XML components 
 
 import os, shutil, sys
-from distutils.core import setup
+from setuptools import setup
 from distutils.command.build import build
 from distutils.command.clean import clean
 
@@ -42,9 +42,9 @@ class toolBuild(build):
     def makeqrc(self, qfile, path):
         compiled = os.system("pyrcc4 %s/%s.qrc -o %s/qrc_%s.py" % (path, qfile, path, qfile))
         if compiled == 0:
-            print "Built: %s/%s.qrc -> %s/qrc_%s.py" % (path, qfile, path, qfile)
+            print("Built: %s/%s.qrc -> %s/qrc_%s.py" % (path, qfile, path, qfile))
         else:
-            print "Warning: Cannot build  %s%s.qrc"  % (path, qfile)
+            print("Warning: Cannot build  %s%s.qrc"  % (path, qfile))
 
     ## creates the python ui files
     # \param ufile ui file name
@@ -52,9 +52,9 @@ class toolBuild(build):
     def makeui(self, ufile, path):
         compiled = os.system("pyuic4 %s/%s.ui -o %s/ui_%s.py" % (path, ufile, path, ufile))
         if compiled == 0:
-            print "Compiled %s/%s.ui -> %s/ui_%s.py" % (path, ufile, path, ufile)
+            print("Compiled %s/%s.ui -> %s/ui_%s.py" % (path, ufile, path, ufile))
         else:
-            print "Warning: Cannot build %s/ui_%s.py"  % (path, ufile)
+            print("Warning: Cannot build %s/ui_%s.py"  % (path, ufile))
 
     ## runner
     # \brief It is running during building
@@ -65,8 +65,8 @@ class toolBuild(build):
             for ui in ufiles:
                 if not ui[0] in (".", ".."):
                     self.makeui(ui[0], ui[1])
-        except TypeError,e:
-            print "No .ui files to build",e
+        except TypeError as e:
+            print("No .ui files to build",e)
 
 
         try:
@@ -76,7 +76,7 @@ class toolBuild(build):
                 if not qrc[0] in (".", ".."):
                     self.makeqrc(qrc[0], qrc[1])
         except TypeError:
-            print "No .qrc files to build"
+            print("No .qrc files to build")
 
         build.run(self)
 

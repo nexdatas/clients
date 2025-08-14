@@ -16,7 +16,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with nexdatas.  If not, see <http://www.gnu.org/licenses/>.
 # \package  ndtstools tools for ndts
-## \file simpleScanClient.py
+# \file simpleScanClient.py
 # example of simple client
 
 
@@ -27,22 +27,24 @@ import random
 
 from math import exp
 
-import PyTango 
+try:
+    import tango
+except Exception:
+    import PyTango as tango
 
 
-
-## the main function    
+# the main function
 def main():
     if  len(sys.argv) < 2:
         print "usage: simpleClient.py  <XMLfile>  <H5file>  <tangoServer>"
-        
+
     else:
         xmlf = sys.argv[1]
         if os.path.exists(xmlf):
 
 
             if len(sys.argv) > 2:
-                
+
                 fname = sys.argv[2]
                 print fname
             else:
@@ -53,16 +55,16 @@ def main():
                 else:
                     fname = xmlf
                 fname = fname.strip() + ".h5"
-            print "storing in ", fname 
-    
+            print "storing in ", fname
+
             device = "p09/tdw/r228"
             if len(sys.argv)>3:
                 device = sys.argv[3]
-            
+
             dpx = PyTango.DeviceProxy(device)
             print " Connected to: ", device
             dpx.Init()
-    
+
             xml = open(xmlf, 'r').read()
 
 
@@ -72,17 +74,17 @@ def main():
             dpx.OpenFile()
 
             dpx.XMLSettings = xml
-            theString = '{"data": {"sample_name":"super sample", "start_time":"2012-11-14T14:05:23.2344-0200",' \
+            theString = \
+                '{"data": {"sample_name":"super sample", ' \
+                + '"start_time":"2012-11-14T14:05:23.2344-0200",' \
                 +' "end_time":"2012-11-14T17:15:23.4567-0200" '\
                 +'}  }'
-  
-            dpx.JSONRecord =theString 
+
+            dpx.JSONRecord =theString
 
             print "opening the entry"
             dpx.OpenEntry()
 
- 
-            
             print "closing the  entry"
             dpx.closeEntry()
             print "closing the H5 file"
@@ -93,10 +95,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-            
-                
-            
-            
-
-
-#  LocalWords:  nicePlot

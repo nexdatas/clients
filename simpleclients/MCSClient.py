@@ -91,7 +91,7 @@ def main():
 
             amsterdam = timezone('Europe/Amsterdam')
             fmt = '%Y-%m-%dT%H:%M:%S.%f%z'
-            starttime = amsterdam.localize(datetime.now())
+            starttime = datetime.now().replace(tzinfo=amsterdam))
 
 
             dpx.XMLSettings = xml
@@ -117,7 +117,7 @@ def main():
 
 
 
-            endtime = amsterdam.localize(datetime.now())
+            endtime = datetime.now().replace(tzinfo=amsterdam))
 
             theString = '{"data": {'\
                 +' "end_time":"'+  str(endtime.strftime(fmt)) + '"' \

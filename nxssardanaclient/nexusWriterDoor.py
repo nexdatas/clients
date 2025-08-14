@@ -284,7 +284,7 @@ class nexusDoor(taurus.core.tango.sardana.macroserver.BaseDoor):
 
         amsterdam = timezone('Europe/Amsterdam')
         fmt = '%Y-%m-%dT%H:%M:%S.%f%z'
-        starttime = amsterdam.localize(datetime.now())
+        starttime = datetime.now().replace(tzinfo=amsterdam))
 
         theString = '{"data": {'\
             +' "sample_name":"test sample 1",'\
@@ -337,7 +337,7 @@ class nexusDoor(taurus.core.tango.sardana.macroserver.BaseDoor):
 
         amsterdam = timezone('Europe/Amsterdam')
         fmt = '%Y-%m-%dT%H:%M:%S.%f%z'
-        endtime = amsterdam.localize(datetime.now())
+        endtime = datetime.now().replace(tzinfo=amsterdam))
 
 
         theString = '{"data": {'\

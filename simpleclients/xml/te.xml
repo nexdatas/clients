@@ -344,12 +344,12 @@
   <group name="data" type="NXdata">   
    <link name="point_nb" target="/entry:NXentry/instrument/collection/point_nb"/>   
    <link name="data" target="/entry:NXentry/instrument/detector/mca">    
-    <doc>Link to mca in /NXentry/NXinstrument/NXdetector</doc>    
+    <doc>Link to mca in /NXentry/instrument:NXinstrument/NXdetector</doc>    
    </link>   <link name="counter1" target="/entry:NXentry/instrument/detector/counter1">    
-    <doc>Link to counter1 in /NXentry/NXinstrument/NXdetector</doc>    
+    <doc>Link to counter1 in /NXentry/instrument:NXinstrument/NXdetector</doc>    
    </link>   <link name="counter2" target="/entry:NXentry/instrument/detector/counter2">    
-    <doc>Link to counter2 in /NXentry/NXinstrument/NXdetector</doc>    
-   </link>   <link name="exp_mot04" target="/entry:NXentry/NXinstrument/NXcollection/exp_mot04"/>   <link name="exp_c20" target="/entry:NXentry/NXinstrument/NXcollection/exp_c20"/>   <link name="exp_c29" target="/entry:NXentry/NXinstrument/NXcollection/exp_c29"/>   <link name="exp_t01" target="/entry:NXentry/NXinstrument/NXcollection/exp_t01"/>   <link name="exp_vfc04" target="/entry:NXentry/NXinstrument/NXcollection/exp_vfc04"/>   <link name="timestamp" target="/entry:NXentry/NXinstrument/NXcollection/timestamp"/>   <link name="tg_exp_mot19" target="/entry:NXentry/NXinstrument/NXcollection/tg_exp_mot19"/>   <link name="tg_exp_mot20" target="/entry:NXentry/NXinstrument/NXcollection/tg_exp_mot20"/>  </group>  
+    <doc>Link to counter2 in /NXentry/instrument:NXinstrument/NXdetector</doc>    
+   </link>   <link name="exp_mot04" target="/entry:NXentry/instrument:NXinstrument/NXcollection/exp_mot04"/>   <link name="exp_c20" target="/entry:NXentry/instrument:NXinstrument/NXcollection/exp_c20"/>   <link name="exp_c29" target="/entry:NXentry/instrument:NXinstrument/NXcollection/exp_c29"/>   <link name="exp_t01" target="/entry:NXentry/instrument:NXinstrument/NXcollection/exp_t01"/>   <link name="exp_vfc04" target="/entry:NXentry/instrument:NXinstrument/NXcollection/exp_vfc04"/>   <link name="timestamp" target="/entry:NXentry/instrument:NXinstrument/NXcollection/timestamp"/>   <link name="tg_exp_mot19" target="/entry:NXentry/instrument:NXinstrument/NXcollection/tg_exp_mot19"/>   <link name="tg_exp_mot20" target="/entry:NXentry/instrument:NXinstrument/NXcollection/tg_exp_mot20"/>  </group>  
   <group name="sample" type="NXsample">   
    <field name="name" type="NX_CHAR">    
     <datasource name="sample_name" type="CLIENT">     
@@ -422,7 +422,7 @@ Set:	<?xml version="1.0" ?>
 </group>
 </group>
 <group name="data" type="NXdata">
-<link name="exp_mot04" target="/entry$var.serialno:NXentry/NXinstrument/NXcollection/exp_mot04"/>
+<link name="exp_mot04" target="/entry$var.serialno:NXentry/instrument:NXinstrument/NXcollection/exp_mot04"/>
 </group>
 </group>
 <group name="entry$var.serialno" type="NXentry">
@@ -437,7 +437,7 @@ Set:	<?xml version="1.0" ?>
 </group>
 </group>
 <group name="data" type="NXdata">
-<link name="exp_c20" target="/entry$var.serialno:NXentry/NXinstrument/NXcollection/exp_c20"/>
+<link name="exp_c20" target="/entry$var.serialno:NXentry/instrument:NXinstrument/NXcollection/exp_c20"/>
 </group>
 </group>
 <group name="entry$var.serialno" type="NXentry">
@@ -452,7 +452,7 @@ Set:	<?xml version="1.0" ?>
 </group>
 </group>
 <group name="data" type="NXdata">
-<link name="exp_c29" target="/entry$var.serialno:NXentry/NXinstrument/NXcollection/exp_c29"/>
+<link name="exp_c29" target="/entry$var.serialno:NXentry/instrument:NXinstrument/NXcollection/exp_c29"/>
 </group>
 </group>
 <group name="entry$var.serialno" type="NXentry">
@@ -467,7 +467,7 @@ Set:	<?xml version="1.0" ?>
 </group>
 </group>
 <group name="data" type="NXdata">
-<link name="exp_t01" target="/entry$var.serialno:NXentry/NXinstrument/NXcollection/exp_t01"/>
+<link name="exp_t01" target="/entry$var.serialno:NXentry/instrument:NXinstrument/NXcollection/exp_t01"/>
 </group>
 </group>
 <group name="entry$var.serialno" type="NXentry">
@@ -482,7 +482,7 @@ Set:	<?xml version="1.0" ?>
 </group>
 </group>
 <group name="data" type="NXdata">
-<link name="exp_vfc04" target="/entry$var.serialno:NXentry/NXinstrument/NXcollection/exp_vfc04"/>
+<link name="exp_vfc04" target="/entry$var.serialno:NXentry/instrument:NXinstrument/NXcollection/exp_vfc04"/>
 </group>
 </group>
 <group name="entry$var.serialno" type="NXentry">
@@ -497,7 +497,7 @@ Set:	<?xml version="1.0" ?>
 </group>
 </group>
 <group name="data" type="NXdata">
-<link name="timestamp" target="/entry$var.serialno:NXentry/NXinstrument/NXcollection/timestamp"/>
+<link name="timestamp" target="/entry$var.serialno:NXentry/instrument:NXinstrument/NXcollection/timestamp"/>
 </group>
 </group>
 <group name="entry$var.serialno" type="NXentry">
@@ -519,7 +519,7 @@ Set:	<?xml version="1.0" ?>
 </group>
 </group>
 <group name="data" type="NXdata">
-<link name="tg_exp_mot19" target="/entry$var.serialno:NXentry/NXinstrument/NXcollection/tg_exp_mot19"/>
+<link name="tg_exp_mot19" target="/entry$var.serialno:NXentry/instrument:NXinstrument/NXcollection/tg_exp_mot19"/>
 </group>
 </group>
 <group name="entry$var.serialno" type="NXentry">
@@ -541,7 +541,7 @@ Set:	<?xml version="1.0" ?>
 </group>
 </group>
 <group name="data" type="NXdata">
-<link name="tg_exp_mot20" target="/entry$var.serialno:NXentry/NXinstrument/NXcollection/tg_exp_mot20"/>
+<link name="tg_exp_mot20" target="/entry$var.serialno:NXentry/instrument:NXinstrument/NXcollection/tg_exp_mot20"/>
 </group>
 </group>
 </definition>

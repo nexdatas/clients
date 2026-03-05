@@ -15,9 +15,9 @@
       </group>
     </group>
     <group name="data" type="NXdata">
-      <link name="data" target="/NXentry/NXinstrument/NXdetector/mca">
+      <link name="data" target="/NXentry/instrument:NXinstrument/NXdetector/mca">
         <doc>
-          Link to mca in /NXentry/NXinstrument/NXdetector
+          Link to mca in /NXentry/instrument:NXinstrument/NXdetector
         </doc>
       </link>
     </group>

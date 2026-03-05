@@ -17,9 +17,9 @@
       </group>
     </group>
     <group type="NXdata" name="data">
-      <link target="/NXentry/NXinstrument/NXdetector/counter1" name="counter1">
+      <link target="/NXentry/instrument:NXinstrument/NXdetector/counter1" name="counter1">
         <doc>
-          Link to counter1 in /NXentry/NXinstrument/NXdetector
+          Link to counter1 in /NXentry/instrument:NXinstrument/NXdetector
         </doc>
       </link>
     </group>

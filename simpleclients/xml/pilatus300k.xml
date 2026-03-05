@@ -101,7 +101,7 @@ ds.result = &quot;&quot; + ds.P300k_fileDir + &quot;/&quot; + ds.P300k_filePrefi
    </group>   
   </group>  
   <group name="data" type="NXdata">   
-   <link name="data" target="NXentry/NXinstrument/pilatus300k:NXdetector/data"/>   
+   <link name="data" target="NXentry/instrument:NXinstrument/pilatus300k:NXdetector/data"/>   
   </group>  
  </group> 
 </definition>
